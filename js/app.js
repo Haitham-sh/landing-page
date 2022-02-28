@@ -82,12 +82,15 @@ window.addEventListener("scroll", () => {
       fay = section.getAttribute("id");
     }
   });
-  lis.forEach((li) => { 
-    if (li.classList.contains(fay)) {
-      li.classList.add("toto");
+    lis.forEach((li) => { 
+        let chld = li.firstChild
+      if (li.classList.contains(fay)) {
+          chld.classList.add("toto");
+          chld.classList.remove("menu__link");
     }
     else {
-      li.classList.remove("toto");
+          chld.classList.remove("toto");
+          chld.classList.add("menu__link");
     } 
   });
 });
